@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Expert gear reviews and buying guides. We test and compare the best tools, home improvement products, and outdoor gear so you can buy with confidence."/>
+  <title>BestGearFinds — Expert Gear Reviews & Buying Guides</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Inter',sans-serif;color:#1a1a1a;background:#fff;line-height:1.6}
+    a{color:inherit;text-decoration:none}
+
+    /* NAV */
+    nav{background:#fff;border-bottom:1px solid #e5e7eb;position:sticky;top:0;z-index:100;padding:0 24px}
+    .nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:60px}
+    .logo{font-size:20px;font-weight:800;color:#111}
+    .logo span{color:#f97316}
+    .nav-links{display:flex;gap:24px;font-size:14px;font-weight:500;color:#4b5563}
+    .nav-links a:hover{color:#f97316}
+
+    /* HERO */
+    .hero{background:linear-gradient(135deg,#111827 0%,#1f2937 100%);color:#fff;padding:80px 24px;text-align:center}
+    .hero h1{font-size:clamp(32px,5vw,56px);font-weight:800;line-height:1.1;margin-bottom:20px}
+    .hero h1 span{color:#f97316}
+    .hero p{font-size:18px;color:#d1d5db;max-width:600px;margin:0 auto 32px}
+    .hero-search{display:flex;gap:12px;max-width:500px;margin:0 auto;flex-wrap:wrap;justify-content:center}
+    .btn{display:inline-block;padding:12px 28px;border-radius:8px;font-weight:600;font-size:15px;cursor:pointer;transition:all .2s}
+    .btn-primary{background:#f97316;color:#fff}
+    .btn-primary:hover{background:#ea6c0a}
+    .btn-outline{border:2px solid #fff;color:#fff}
+    .btn-outline:hover{background:#fff;color:#111}
+
+    /* CATEGORIES */
+    .section{padding:64px 24px}
+    .section-inner{max-width:1200px;margin:0 auto}
+    .section-title{font-size:28px;font-weight:800;margin-bottom:8px}
+    .section-sub{color:#6b7280;margin-bottom:40px;font-size:16px}
+    .categories{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+    .cat-card{background:#f9fafb;border:1px solid #e5e7eb;border-radius:12px;padding:24px;text-align:center;transition:all .2s;cursor:pointer}
+    .cat-card:hover{border-color:#f97316;transform:translateY(-2px);box-shadow:0 8px 24px rgba(249,115,22,.15)}
+    .cat-icon{font-size:36px;margin-bottom:12px}
+    .cat-name{font-weight:700;font-size:15px;margin-bottom:4px}
+    .cat-count{font-size:13px;color:#9ca3af}
+
+    /* FEATURED POSTS */
+    .posts-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px}
+    .post-card{border:1px solid #e5e7eb;border-radius:12px;overflow:hidden;transition:all .2s}
+    .post-card:hover{box-shadow:0 8px 32px rgba(0,0,0,.1);transform:translateY(-2px)}
+    .post-img{width:100%;height:200px;object-fit:cover;background:linear-gradient(135deg,#f3f4f6,#e5e7eb);display:flex;align-items:center;justify-content:center;font-size:48px}
+    .post-body{padding:20px}
+    .post-tag{display:inline-block;background:#fff7ed;color:#f97316;font-size:12px;font-weight:600;padding:4px 10px;border-radius:20px;margin-bottom:10px;border:1px solid #fed7aa}
+    .post-title{font-size:18px;font-weight:700;margin-bottom:8px;line-height:1.3}
+    .post-title:hover{color:#f97316}
+    .post-excerpt{font-size:14px;color:#6b7280;margin-bottom:16px;line-height:1.6}
+    .post-meta{display:flex;align-items:center;justify-content:space-between;font-size:13px;color:#9ca3af}
+    .read-more{color:#f97316;font-weight:600;font-size:13px}
+
+    /* HOW WE REVIEW */
+    .trust-section{background:#f9fafb;padding:64px 24px;border-top:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb}
+    .trust-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:32px;max-width:1000px;margin:0 auto}
+    .trust-item{text-align:center}
+    .trust-icon{font-size:36px;margin-bottom:12px}
+    .trust-title{font-weight:700;font-size:16px;margin-bottom:6px}
+    .trust-text{font-size:14px;color:#6b7280}
+
+    /* DISCLOSURE */
+    .disclosure{background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:16px 20px;margin:32px auto;max-width:1200px;font-size:13px;color:#92400e}
+    .disclosure strong{color:#78350f}
+
+    /* FOOTER */
+    footer{background:#111;color:#9ca3af;padding:40px 24px;text-align:center;font-size:14px}
+    footer a{color:#f97316}
+    .footer-links{display:flex;gap:24px;justify-content:center;margin-bottom:16px;flex-wrap:wrap}
+
+    @media(max-width:600px){
+      .nav-links{display:none}
+      .hero{padding:48px 16px}
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo">Best<span>Gear</span>Finds</a>
+    <div class="nav-links">
+      <a href="/tools">Power Tools</a>
+      <a href="/home">Home Improvement</a>
+      <a href="/outdoor">Outdoor & Garden</a>
+      <a href="/kitchen">Kitchen</a>
+      <a href="/smart-home">Smart Home</a>
+      <a href="/about">About</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <h1>Find the <span>Best Gear</span><br>Before You Buy</h1>
+  <p>We research, compare, and rank the top-rated tools, home improvement products, and gear — so you don't waste money on the wrong purchase.</p>
+  <div class="hero-search">
+    <a href="/tools" class="btn btn-primary">Browse Reviews</a>
+    <a href="/about" class="btn btn-outline">How We Pick</a>
+  </div>
+</section>
+
+<div class="disclosure">
+  <strong>Affiliate Disclosure:</strong> BestGearFinds participates in the Amazon Services LLC Associates Program. We earn a small commission when you click our links and make a purchase — at no extra cost to you. This helps us keep the site free and the reviews honest.
+</div>
+
+<section class="section">
+  <div class="section-inner">
+    <h2 class="section-title">Browse by Category</h2>
+    <p class="section-sub">Expert buying guides across the categories you care about most</p>
+    <div class="categories">
+      <a href="/power-tools" class="cat-card">
+        <div class="cat-icon">🔧</div>
+        <div class="cat-name">Power Tools</div>
+        <div class="cat-count">Drills, saws, sanders & more</div>
+      </a>
+      <a href="/hand-tools" class="cat-card">
+        <div class="cat-icon">🔨</div>
+        <div class="cat-name">Hand Tools</div>
+        <div class="cat-count">Wrenches, hammers, sets</div>
+      </a>
+      <a href="/home-improvement" class="cat-card">
+        <div class="cat-icon">🏠</div>
+        <div class="cat-name">Home Improvement</div>
+        <div class="cat-count">Plumbing, electrical & more</div>
+      </a>
+      <a href="/outdoor" class="cat-card">
+        <div class="cat-icon">🌿</div>
+        <div class="cat-name">Outdoor & Garden</div>
+        <div class="cat-count">Mowers, trimmers, tools</div>
+      </a>
+      <a href="/kitchen" class="cat-card">
+        <div class="cat-icon">🍳</div>
+        <div class="cat-name">Kitchen</div>
+        <div class="cat-count">Appliances, cookware & gadgets</div>
+      </a>
+      <a href="/smart-home" class="cat-card">
+        <div class="cat-icon">💡</div>
+        <div class="cat-name">Smart Home</div>
+        <div class="cat-count">Thermostats, cameras, speakers</div>
+      </a>
+      <a href="/safety" class="cat-card">
+        <div class="cat-icon">🛡️</div>
+        <div class="cat-name">Safety & Security</div>
+        <div class="cat-count">Locks, alarms, sensors</div>
+      </a>
+      <a href="/storage" class="cat-card">
+        <div class="cat-icon">📦</div>
+        <div class="cat-name">Storage & Organization</div>
+        <div class="cat-count">Shelves, cabinets, bins</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="section-inner">
+    <h2 class="section-title">Latest Reviews</h2>
+    <p class="section-sub">In-depth comparisons updated regularly with current prices</p>
+    <div class="posts-grid">
+
+      <article class="post-card">
+        <div class="post-img">🔧</div>
+        <div class="post-body">
+          <span class="post-tag">Power Tools</span>
+          <h3 class="post-title"><a href="/best-cordless-drill">Best Cordless Drills of 2026 — Tested & Ranked</a></h3>
+          <p class="post-excerpt">We compared 12 cordless drills across battery life, torque, and value. Our top pick handles everything from drywall to concrete.</p>
+          <div class="post-meta">
+            <span>Updated April 2026</span>
+            <a href="/best-cordless-drill" class="read-more">Read review →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="post-card">
+        <div class="post-img">🪚</div>
+        <div class="post-body">
+          <span class="post-tag">Power Tools</span>
+          <h3 class="post-title"><a href="/best-circular-saw">Best Circular Saws: 7 Models Compared (2026)</a></h3>
+          <p class="post-excerpt">From budget cuts to professional-grade blades, we break down exactly which circular saw is right for your projects and budget.</p>
+          <div class="post-meta">
+            <span>Updated April 2026</span>
+            <a href="/best-circular-saw" class="read-more">Read review →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="post-card">
+        <div class="post-img">🌡️</div>
+        <div class="post-body">
+          <span class="post-tag">Smart Home</span>
+          <h3 class="post-title"><a href="/best-smart-thermostat">Best Smart Thermostats — Save Money on Energy Bills</a></h3>
+          <p class="post-excerpt">We tested Nest, Ecobee, and 6 other smart thermostats. Find out which one pays for itself fastest and is easiest to install.</p>
+          <div class="post-meta">
+            <span>Updated April 2026</span>
+            <a href="/best-smart-thermostat" class="read-more">Read review →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="post-card">
+        <div class="post-img">🏠</div>
+        <div class="post-body">
+          <span class="post-tag">Home Improvement</span>
+          <h3 class="post-title"><a href="/best-pressure-washer">Best Pressure Washers for Home Use (2026)</a></h3>
+          <p class="post-excerpt">Electric or gas? 1600 PSI or 3000 PSI? We cut through the confusion and name the best pressure washers for driveways, decks, and siding.</p>
+          <div class="post-meta">
+            <span>Updated April 2026</span>
+            <a href="/best-pressure-washer" class="read-more">Read review →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="post-card">
+        <div class="post-img">🌿</div>
+        <div class="post-body">
+          <span class="post-tag">Outdoor & Garden</span>
+          <h3 class="post-title"><a href="/best-lawn-mower">Best Lawn Mowers of 2026 — Every Type Compared</a></h3>
+          <p class="post-excerpt">Robot, riding, push, or self-propelled? Our lawn mower guide matches the right mower to your yard size and budget.</p>
+          <div class="post-meta">
+            <span>Updated April 2026</span>
+            <a href="/best-lawn-mower" class="read-more">Read review →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="post-card">
+        <div class="post-img">🔨</div>
+        <div class="post-body">
+          <span class="post-tag">Hand Tools</span>
+          <h3 class="post-title"><a href="/best-tool-set">Best Tool Sets for Homeowners (2026) — Complete Guide</a></h3>
+          <p class="post-excerpt">Whether you're a first-time homeowner or seasoned DIYer, these are the tool sets that give you the most value for your money.</p>
+          <div class="post-meta">
+            <span>Updated April 2026</span>
+            <a href="/best-tool-set" class="read-more">Read review →</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="trust-section">
+  <div class="section-inner" style="text-align:center;margin-bottom:40px">
+    <h2 class="section-title">How We Pick the Best Gear</h2>
+    <p class="section-sub">Our reviews are independent, thorough, and updated regularly</p>
+  </div>
+  <div class="trust-grid">
+    <div class="trust-item">
+      <div class="trust-icon">🔬</div>
+      <div class="trust-title">Deep Research</div>
+      <div class="trust-text">We analyze hundreds of reviews, specs, and real-world tests before making any recommendation</div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon">💰</div>
+      <div class="trust-title">Every Budget</div>
+      <div class="trust-text">We always include budget, mid-range, and premium picks — because not everyone needs the most expensive option</div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon">🔄</div>
+      <div class="trust-title">Always Updated</div>
+      <div class="trust-text">Products change. Our reviews are regularly revisited and updated with the latest models and prices</div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon">✅</div>
+      <div class="trust-title">Honest Picks</div>
+      <div class="trust-text">We recommend what's actually best, not what pays the highest commission. Our reputation depends on it</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-links">
+    <a href="/about">About</a>
+    <a href="/contact">Contact</a>
+    <a href="/privacy">Privacy Policy</a>
+    <a href="/disclosure">Affiliate Disclosure</a>
+  </div>
+  <p>© 2026 BestGearFinds.com · We are a participant in the Amazon Services LLC Associates Program</p>
+</footer>
+
+</body>
+</html>
